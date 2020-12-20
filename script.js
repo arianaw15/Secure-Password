@@ -26,14 +26,13 @@ var result           = '';
   var numCharacters = '0123456789'
   var lowerCaseCharacters = 'abcdefghijklmnopqrstuvwxyz'
   var upperCaseCharacters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  var character = [specialCharacters + numCharacters + lowerCaseCharacters + upperCaseCharacters]
 
 //Function if user selects all options to be included
 function makeid(length) {
   if (lowerCase === true && upperCase === true && num === true && specialChar === true){
-  var charactersLength = character.length;
+  var charactersLength = (specialCharacters + numCharacters + lowerCaseCharacters + upperCaseCharacters).length;
   for ( var i = 0; i < length; i++ ) {
-     result += character.charAt(Math.floor(Math.random() * charactersLength));
+     result += (specialCharacters + numCharacters + lowerCaseCharacters + upperCaseCharacters).charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
 }
