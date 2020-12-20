@@ -26,21 +26,30 @@ var result           = '';
   var numCharacters = '0123456789'
   var lowerCaseCharacters = 'abcdefghijklmnopqrstuvwxyz'
   var upperCaseCharacters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var totalCharacters = ""
+
+if (lowerCase === true){
+  totalCharacters= totalCharacters+ lowerCaseCharacters
+}
+
+if (upperCase === true){
+  totalCharacters= totalCharacters+ upperCaseCharacters
+}
+
+if (num === true){
+  totalCharacters= totalCharacters+ numCharacters
+}
+
+if (specialChar === true){
+  totalCharacters= totalCharacters+ specialCharacters
+}
 
 //Function if user selects all options to be included
 function makeid(length) {
-  if (lowerCase === true && upperCase === true && num === true && specialChar === true){
-  var charactersLength = (specialCharacters + numCharacters + lowerCaseCharacters + upperCaseCharacters).length;
   for ( var i = 0; i < length; i++ ) {
-     result += (specialCharacters + numCharacters + lowerCaseCharacters + upperCaseCharacters).charAt(Math.floor(Math.random() * charactersLength));
-  }
+    result += totalCharacters.charAt(Math.floor(Math.random() * totalCharacters.length));
+ };
   return result;
-}
-
-//Function if user doesn't select any of the options to be included
-else {
-  alert("You can not have a password without uppercase, lowercase, numbers and special characters. Please select at least 1.")
-  }
 }
 
 console.log(makeid(passwordLength));
