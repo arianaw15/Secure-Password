@@ -1,15 +1,15 @@
 //When the user clicks 'Generate Password' it triggers the prompts to obtain the criteria for their password
 
-var generateBtn = document.getElementById("#generate").addEventListener("click", generateLength);
+// var generateBtn = document.getElementById("#generate").addEventListener("click", generateLength);
 
   //Prompt the user to select a password length between 8 and 128 characters
-  function generateLength(){
+  // function generateLength(){
   var passwordLength = prompt("Select the length of your password (must be between 8-128 characters)")
   if (passwordLength <= 8 && passwordLength >= 128) {
     alert("That is not a valid length, please click the 'Generate Password' button and select a number between 8 and 128")
     result = passwordLength;
   }
-};
+// };
 
   //Prompt the user to confirm whether they'd like lower case letters included in their password
   var lowerCase = confirm("Would you like to include lower case letters in your password?")
