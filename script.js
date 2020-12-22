@@ -1,15 +1,26 @@
-//When the user clicks 'Generate Password' it triggers the prompts to obtain the criteria for their password
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-// var generateBtn = document.getElementById("#generate").addEventListener("click", generateLength);
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 
   //Prompt the user to select a password length between 8 and 128 characters
-  // function generateLength(){
+  function generatePassword(){
   var passwordLength = prompt("Select the length of your password (must be between 8-128 characters)")
-  if (passwordLength <= 8 && passwordLength >= 128) {
-    alert("That is not a valid length, please click the 'Generate Password' button and select a number between 8 and 128")
-    result = passwordLength;
+  if (passwordLength <= 8 || passwordLength >= 128){
+    confirm("That is not a valid length, please click the 'Generate Password' button and select a number between 8 and 128");
+    if (true || false) return;
   }
-// };
 
   //Prompt the user to confirm whether they'd like lower case letters included in their password
   var lowerCase = confirm("Would you like to include lower case letters in your password?")
@@ -55,16 +66,10 @@
 
 
   //Function based on users selections
-  function makeid(length) {
-    for (var i = 0; i < length; i++) {
+  
+    for (var i = 0; i < passwordLength; i++) {
       result += totalCharacters.charAt(Math.floor(Math.random() * totalCharacters.length));
     };
     return result;
-  }
-
-  console.log(makeid(passwordLength));
-
-  //Generate User's password and display it in the #password field
-  var password = makeid();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = makeid(passwordLength);
+}
+  
